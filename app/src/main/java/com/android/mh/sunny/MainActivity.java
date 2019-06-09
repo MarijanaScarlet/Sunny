@@ -9,6 +9,12 @@ import android.widget.EditText;
 
 import com.android.mh.sunny.database.Database;
 import com.android.mh.sunny.database.entitets.User;
+import com.facebook.stetho.DumperPluginsProvider;
+import com.facebook.stetho.Stetho;
+import com.facebook.stetho.dumpapp.DumperPlugin;
+import com.facebook.stetho.okhttp3.StethoInterceptor;
+
+import okhttp3.OkHttpClient;
 
  public class MainActivity extends AppCompatActivity {
 
@@ -19,6 +25,9 @@ import com.android.mh.sunny.database.entitets.User;
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        Stetho.initializeWithDefaults(this);
+
+
 
         db = Database.getInstance(getApplicationContext());
 
